@@ -1,4 +1,8 @@
 
+var gerak2 = [0.0, 0.0, 0.0];
+var xAdder = 0.02;
+var yAdder = 0.03;
+var zAdder = 0.04;
 
 (function(global) {
 
@@ -19,14 +23,11 @@
     program = glUtils.createProgram(gl, vertexShader, fragmentShader);
     program2 = glUtils.createProgram(gl, vertexShader2, fragmentShader2);
   
-    var theta = [20, 40, 0];
+    var theta = [0.0, 0.0, 0.0];
     var xAxis = 0;
     var yAxis = 1;
     var zAxis = 2;
-    var gerak2 = [0.0, 0.0, 0.0];
-    var xAdder = 0.02;
-    var yAdder = 0.03;
-    var zAdder = 0.04;
+    
 
     function listener(){
       function onKeyPress(event) {
@@ -255,7 +256,7 @@
 
             if (scale >= 1) membesar = -1;
             else if (scale <= -1) membesar = 1;
-            scale = scale + (membesar * 0.0195); 
+            scale = scale + (membesar * 0.0100); 
             gl.uniform1f(scaleLoc, scale);
       
       // Uniform untuk definisi cahaya
